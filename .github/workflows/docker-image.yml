@@ -20,7 +20,7 @@ jobs:
     
     # step 2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag julialiao/dsci310-rstudio_proj:latest
+      run: docker build . --file Dockerfile --tag dsci310-rstudio_proj:latest
 
 
 
