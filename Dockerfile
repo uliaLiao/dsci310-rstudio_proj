@@ -9,6 +9,7 @@ RUN ls -alh
 
 RUN Rscript -e "print('Hello!')"
 RUN Rscript -e "install.packages('cowsay')"
+RUN Rscript -e "install.packages('renv')"
 # OR RUN Rscript -e "install.packages('cowsay', repos='http://cran.us.r-project.org')"
 # RUN Rscript my_R.R
 # -e for expression
@@ -26,5 +27,5 @@ COPY --chown=rstudio:rstudio .Rprofile .
 
 ## change the user
 USER rstudio
-RUN Rescript -e "renv::repair()"
+RUN Rscript -e "renv::repair()"
 USER root
