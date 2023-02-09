@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+# when something happen (trigger)
+on:
+  push:
+    branches: [ "master" ]
+#   pull_request:
+#     branches: [ "master" ]
+
+# do the jobs (bullets)
+jobs: 
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps: 
+    # step 1 : check out the repository
+    - uses: actions/checkout@v3
+    
+    # step 2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag dsci310-rstudio_proj:latest
+
+
+
